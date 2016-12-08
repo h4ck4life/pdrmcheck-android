@@ -2,7 +2,9 @@ package filavents.com.semaksamanpolis;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String PDRM_API = "http://pdrmcheck.filavents.com/v1/pdrm/summon";
     ProgressDialog barProgressDialog;
+    AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -211,7 +214,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_favorite:
-                Toast.makeText(getApplicationContext(), "Information text", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Information text", Toast.LENGTH_SHORT).show();
+                alertDialog = new AlertDialog.Builder(this).create();
+                alertDialog.setTitle("Tentang Aplikasi");
+                alertDialog.setMessage("Aplikasi ini memudahkan anda untuk membuat semakan saman polis.\n\nWalaubagaimanapun, ianya berfungsi hanya sebagai sumber informasi sahaja.\n\nUrusan lanjutan hendaklah perlu diselesaikan di saluran yang rasmi.\n\nTerima kasih kerana menggunakan aplikasi ini, semoga bermanfaat =)");
+                alertDialog.setCancelable(true);
+                alertDialog.show();
                 return true;
 
             default:
