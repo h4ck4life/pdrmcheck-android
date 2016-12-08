@@ -25,6 +25,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
+import filavents.com.semaksamanpolis.util.TypefaceUtil;
 import github.nisrulz.androidutils.network.NetworkUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TypefaceUtil.overrideFont(getApplicationContext(), "Roboto Condensed", "fonts/RobotoCondensed-Regular.ttf");
 
         // Configure Google Mobile Ads
         AdView mAdView = (AdView) findViewById(R.id.adView);
@@ -136,15 +139,30 @@ public class MainActivity extends AppCompatActivity {
                                 return;
                             }
 
+
+                            System.out.println(response.toString());
+
+                            // Get summon name
+                            String summonName = response.get("Name").toString();
+                            int summonCount = response.getJSONArray("SummonData").length();
+                            String summonTotalAmt = response.get("TotalAmount").toString();
+
+                            LinearLayout summonInfoView = (LinearLayout) View.inflate(MainActivity.this, R.layout.summon_summary, null);
+                            ((TextView) summonInfoView.findViewById(R.id.summonName)).setText(summonName);
+                            ((TextView) summonInfoView.findViewById(R.id.summonCount)).setText(String.valueOf(summonCount) + " SAMAN DIJUMPAI");
+                            ((TextView) summonInfoView.findViewById(R.id.summonTotalAmt)).setText("JUMLAH SAMAN RM " + summonTotalAmt);
+
+                            scrollView.addView(summonInfoView);
+
+                            // Get summon data
                             JSONArray summonData = response.getJSONArray("SummonData");
-                            System.out.println("SUMMON DATATS: " + summonData.length());
 
                             for (int i = 0; i < summonData.length(); i++) {
                                 JSONObject summon = (JSONObject) summonData.get(i);
 
                                 LinearLayout inflateRow = (LinearLayout) View.inflate(MainActivity.this, R.layout.row_layout, null);
 
-                                ((TextView) inflateRow.findViewById(R.id.rowHeader)).setText("Summon No. " + (i + 1));
+                                ((TextView) inflateRow.findViewById(R.id.rowHeader)).setText("Saman No. " + (i + 1));
                                 ((TextView) inflateRow.findViewById(R.id.rowValuesummonNoTxt)).setText(summon.get("SummonsNo").toString());
                                 ((TextView) inflateRow.findViewById(R.id.rowValuevehicleNoTxt)).setText(summon.get("VehicleNo").toString());
                                 ((TextView) inflateRow.findViewById(R.id.rowValueblacklistedTxt)).setText(summon.get("Blacklisted").toString());

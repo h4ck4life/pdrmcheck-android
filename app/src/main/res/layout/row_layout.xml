@@ -39,7 +39,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Summon No" />
+                android:text="No. Saman" />
 
             <TextView
                 android:id="@+id/rowValuesummonNoTxt"
@@ -66,7 +66,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Vehicle No" />
+                android:text="No. Kenderaan" />
 
             <TextView
                 android:id="@+id/rowValuevehicleNoTxt"
@@ -93,7 +93,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Blacklisted" />
+                android:text="Senarai Hitam" />
 
             <TextView
                 android:id="@+id/rowValueblacklistedTxt"
@@ -120,7 +120,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Offence Date" />
+                android:text="Tarikh Disaman" />
 
             <TextView
                 android:id="@+id/rowValueoffenceDataTxt"
@@ -147,7 +147,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Non Compoundable" />
+                android:text="Boleh Dikompaun" />
 
             <TextView
                 android:id="@+id/rowValuenoncompoundTxt"
@@ -174,7 +174,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="District" />
+                android:text="Kawasan" />
 
             <TextView
                 android:id="@+id/rowValuedistricTxt"
@@ -201,7 +201,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Offence" />
+                android:text="Kesalahan" />
 
             <TextView
                 android:id="@+id/rowValueoffenceTxt"
@@ -228,7 +228,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Location" />
+                android:text="Lokasi" />
 
             <TextView
                 android:id="@+id/rowValuelocationTxt"
@@ -255,7 +255,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
-                android:text="Amount" />
+                android:text="Jumlah" />
 
             <TextView
                 android:id="@+id/rowValueamountTxt"
