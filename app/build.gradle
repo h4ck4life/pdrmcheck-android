@@ -7,7 +7,7 @@ android {
         applicationId "filavents.com.semaksamanpolis"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1
+        versionCode 3
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -29,6 +29,9 @@ dependencies {
     compile 'com.google.firebase:firebase-ads:10.0.1'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.github.nisrulz:android-utils:1.0.2'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-crash:10.0.1'
+    compile 'io.github.kobakei:ratethisapp:1.1.0'
 }
 
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1090180855740",
+    "firebase_url": "https://semaksamanpolis-6ecc0.firebaseio.com",
+    "project_id": "semaksamanpolis-6ecc0",
+    "storage_bucket": "semaksamanpolis-6ecc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090180855740:android:94a302719b1b7f98",
+        "android_client_info": {
+          "package_name": "filavents.com.semaksamanpolis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090180855740-g2mgtqe6je86l9fdbuktk2kpfa225apn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Ej4Y_d2s0Ncu3EhMpJnmwhkXH9TdlX8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

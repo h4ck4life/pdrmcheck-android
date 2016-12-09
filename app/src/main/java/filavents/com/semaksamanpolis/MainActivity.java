@@ -2,7 +2,6 @@ package filavents.com.semaksamanpolis;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.kobakei.ratethisapp.RateThisApp;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -41,7 +41,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Change default typeface
         TypefaceUtil.overrideFont(getApplicationContext(), "Roboto Condensed", "fonts/RobotoCondensed-Regular.ttf");
+
+        // Prompt Rate My App dialog
+        RateThisApp.Config config = new RateThisApp.Config(3, 5);
+        RateThisApp.init(config);
 
         // Configure Google Mobile Ads
         AdView mAdView = (AdView) findViewById(R.id.adView);
@@ -229,4 +234,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Monitor launch times and interval from installation
+        RateThisApp.onStart(this);
+        // If the criteria is satisfied, "Rate this app" dialog will be shown
+        RateThisApp.showRateDialogIfNeeded(this);
+    }
+
 }
