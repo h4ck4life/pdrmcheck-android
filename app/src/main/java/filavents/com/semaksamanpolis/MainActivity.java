@@ -2,9 +2,11 @@ package filavents.com.semaksamanpolis;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -121,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
                         try {
 
+                            Log.d("SUMMON_DATA", response.toString(4));
+
                             scrollView.removeAllViews();
 
                             // if no summon found
@@ -147,8 +151,6 @@ public class MainActivity extends AppCompatActivity {
                                 return;
                             }
 
-
-                            System.out.println(response.toString());
 
                             // Get summon name
                             String summonName = response.get("Name").toString();
@@ -226,6 +228,14 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog.setCancelable(true);
                 alertDialog.show();
                 return true;
+
+            case R.id.action_share:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Aplikasi mudah untuk semak saman Polis Trafik, sila muat turun https://play.google.com/store/apps/details?id=filavents.com.semaksamanpolis");
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, "Kongsi aplikasi ini.."));
+            return true;
 
             default:
                 // If we got here, the user's action was not recognized.

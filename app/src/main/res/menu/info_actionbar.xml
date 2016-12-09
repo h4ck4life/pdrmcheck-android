@@ -4,8 +4,14 @@
     <!-- "Mark Favorite", should appear as action button if possible -->
     <item
         android:id="@+id/action_favorite"
-        android:icon="@android:drawable/ic_dialog_info"
+        android:icon="@android:drawable/ic_menu_info_details"
         android:title="Info"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_share"
+        android:title="Kongsi"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="ifRoom" />
 
 </menu>
